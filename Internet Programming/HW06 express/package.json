@@ -1,0 +1,17 @@
+{
+  "name": "jo000042_hw06",
+  "version": "1.0.0",
+  "description": "Assignment 6",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jo000042",
+  "license": "ISC"
+}

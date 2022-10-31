@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    
+      
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+	    <title>Login Page</title>
+	    <style type="text/css"> .jumbotron { text-align: center; } </style>
+  </head>
+
+  <body>
+   	<div class="jumbotron" style="background: DarkSeaGreen !important">
+        <h1>Login Page</h1>
+        <p>Please enter your user name and password. Both are case sentitive</p>
+    </div>
+    <br><br> <p id="errorText"></p>
+    
+     <form id="myForm" name="myForm">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+<div>
+            <label for="login">User:</label>
+            <input type="text" id="login" value = ""  class="form-control" name="login" placeholder="Username" required="">
+</div>
+<div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" value = "" class="form-control" name="name"
+                      pattern="[a-zA-Z0-9\s]+" title="password" placeholder="Password"
+                      required="">
+</div>
+<div>
+          <input type="submit" class="btn btn-primary btn-block" onclick="getlogin()" value="Login">
+
+</div>
+</form>
+       
+
+
+<script>
+  function getlogin(){
+    var error = document.getElementById("errorText")
+
+      $(document).ready(function () {
+      $('#myForm').submit(function (event) {
+        
+        event.preventDefault();
+        
+        //collect the form data using Id Selector for whatever data you need to send to server
+        let login= $('#login').val();
+        let password= $('#password').val();
+
+        $.post('/getlogin', {login, password}).done(function(data) {
+            console.log(data);
+            if (data.status === 'success') {
+                //pseudo code
+                //Make sure error message is not displayed
+
+
+                //Re-direct to display all events page,
+              console.log("success!");  //I think this also not working
+              error.innerHTML = ""
+                window.location.href = '/home';
+            }
+            else {
+                //Display error message
+                
+                console.log("fail!");  
+                error.innerHTML = "<span style='color: red;'>"+
+						"Invalid credentials. Please try again!</span>"
+            }
+          
+        });
+      });
+     });
+      
+    }
+
+</script>
+
+  </body>
+</html>

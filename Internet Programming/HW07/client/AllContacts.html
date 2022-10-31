@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>All Contact</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expanded navbar-light bg-light">
+      <ul class="nav nav-pills">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin">Admin Page</a>
+          </li>
+
+        <li class="nav-item active">
+            <a class="nav-link active" href="/AllContact">All Contact</a>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/MyContacts">My Contacts</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/AddContact">Add Contact</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/Stocks">Stocks Page</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">LOG OUT</a>
+          </li>
+  
+            <button type="button" class="glyphicon glyphicon-log-out" aria-hidden="true" onclick="downloadCSV()"></button>
+
+
+        </a></li> 
+
+      </ul>
+    </nav><br>
+    <br>
+</div>
+
+  <div class="container">
+    <table class="table table-striped" id="AllcontactTable">
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Name</th>
+          <th scope="col">Location</th>
+          <th scope="col">Contact Information</th>
+          <th scope="col">Email</th>
+          <th scope="col">Website</th>
+        </tr>
+      </thead>
+      <tbody id = allContacts></tbody>
+    </table>
+  </div>
+
+
+<script>
+  
+  document.getElementById("allContacts").innerHTML = formTable();
+
+  function formTable() {
+    
+  $.get('/GetAllContact', (data) => 
+  {
+    
+    console.log(data);
+    $.each(data, function(key,value) {
+      var outstring = '';
+      console.log(value);
+      
+      outstring += '<tr>';
+      outstring += '<td>'+value.contact_category+'</td>';
+      outstring += '<td>'+value.contact_name+'</td>';
+      outstring += '<td>'+value.contact_location+'</td>';
+      outstring += '<td>'+value.contact_info+'</td>';
+      outstring += '<td>'+value.contact_email+'</td>';
+      outstring += '<td> <a href="' + value.website_url + '">';
+      outstring += value.website_title+'</a> </td>';
+      outstring += '</tr>';
+      $('#AllcontactTable tbody').append(outstring);    
+      //table.innerHTML += outstring;
+      outstring = ''; 
+
+
+    });
+  }); 
+  
+}
+
+function downloadCSV(){
+  console.log("downloadCSV");
+  var a = "Name,Category,Location,Contact_information,Email,Website\r\n";
+  $.get('/GetAllContact', (data) => 
+  {
+    $.each(data, function(key,item) {
+      a += item.contact_name + "," + item.contact_category + "," + item.contact_location + "," + item.contact_info + "," + item.contact_email + "," + item.website_url + "\r\n";
+    });
+    
+    console.log(a);
+    downloadCSVFile(a);
+  }); 
+}
+
+function downloadCSVFile(csv_data) {
+
+  CSVFile = new Blob([csv_data], { type: "text/csv"});
+
+  var downloadLink = document.createElement('a');
+
+  downloadLink.download = "contact.csv";
+  downloadLink.href = window.URL.createObjectURL(CSVFile);
+  downloadLink.style.display = "none";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
+
+</script>
+
+  </body>
+</html>
