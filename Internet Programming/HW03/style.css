@@ -1,0 +1,239 @@
+    nav{
+                color: white;
+                padding: 10px; 
+                width:1300px; 
+                background-image: -webkit-linear-gradient(-30deg, darkblue 70%, black 50%);
+                border: 1px solid white;
+                text-align: left;   
+                overflow: hidden;
+                margin: 10px;
+
+                
+                
+            }
+
+            .navbar a:link, a:visited{
+                color: white;
+                text-decoration: none; 
+            }
+
+            h1{
+                padding: 10px; 
+                color: white;
+            }
+
+            span{
+                text-decoration-line: underline;
+                text-align: center;
+            }
+            body{
+                background-color:DarkSlateGray;
+                margin: 0;
+                padding: 0;
+                font-family: 'Raleway', sans-serif;
+                font-size: 15px;
+                line-height: 1.5;
+            }
+
+
+
+            .img{
+                float:right;
+                width:25%;
+                height:25%;
+                top: 30%;  right: 10%;
+                position: absolute;
+            }
+            .hoverBigImg{
+                float:right;
+                width:25%;
+                height:25%;
+                position: absolute;
+                top: 30%; right: 10%;
+                display: none;
+                
+            }
+
+            table.table1 {
+                border-collapse: collapse;
+                width: 850px;
+                text-align: left;
+                float: left;
+                padding: 15px;
+                left: 10%;
+                color: black;
+                border: 2px solid #dddddd;
+                  vertical-align: top;
+                
+              }
+
+              table.table3 {
+                border-collapse: collapse;
+                width: 45%;
+                height: 400px;
+                text-align: middle;
+                float: left;
+                
+                color: black;
+                border: 2px solid #dddddd;
+
+                margin-left: auto ;
+                margin-right: auto ;
+                table-layout: fixed;
+                
+              }            
+                
+              #googleMap {
+                width:300px;height:300px; float:right; 
+              }
+              
+
+              select, option {
+                width: 200px;
+                height: 40px;
+                }
+
+              
+              table.table1 tr:nth-child(odd),table.table3 tr:nth-child(odd) {
+                  background-color: Lavender;
+              }
+              table.table1 tr:nth-child(even),table.table3 tr:nth-child(even) {
+                  background-color: white;
+              }
+              table.table1 tr:hover,table.table3 tr:hover
+              {
+                  background-color:lightgray;
+              }
+              
+              .hoverImg{
+                  width:20%;
+                  height:20%;
+                  display: none;
+              }
+              table.table1 tr:hover .hoverImg {display: block;}
+              table.table1 tr:hover .hoverBigImg {display: block;}
+              table.table1 tr.active:after .hoverBigImg {display: block;}
+
+            <!-- input-->
+            input {
+                padding: 10px 45px;
+                margin: 20px 10px;
+                }
+                
+                select
+                {
+                    padding: 10px 45px;
+                    margin: 20px 10px;
+                }
+                
+                table.table2 {
+                    border-collapse: collapse;
+                    width: 400px;
+                    background-color: white;
+                    margin: 20px 10px;
+                    padding: 15px 65px;
+                    top: 40px;
+                    position: absolute;
+                    
+                }
+                table.table2 th, table.table2 td {
+                    border: 2px solid #dddddd;
+                }
+                        
+    
+                input[type=submit]{
+                    background-color: #4CAF50;
+                    border: none;
+                    color: white;
+                    padding: 15px 65px;
+                    margin: 10px 10px;
+                    border-radius: 4px;
+                }
+
+
+                <!-- widgets-->
+            .widgets
+            {
+                padding: 5px;
+            }
+
+            .box
+            {
+                padding: 15px;
+                margin: 15px;
+                border: 1px solid gray;
+            }
+
+            .pwd{
+                
+                position: absolute;
+                height: 70%;
+                width: 70%;
+                top: 100px;
+                right: 20px;
+                left: 400px;
+            }
+            .pwdChecker{
+                
+                position: absolute;
+                height: 70%;
+                width: 70%;
+                top: 500px;
+                right: 30px;
+                left: 400px;
+            }
+
+            #container,#container1 {
+            background: #ffffff;
+            padding: 20px;
+            margin: 90px auto;
+            border-radius: 5px;
+            border: 2px solid gray;
+            width: 550px;
+            height: 150px; 
+        
+            }
+            #header, #header1 {
+            text-align: center;
+            background-color: #FEFFED;
+            border-radius: 5px;
+            margin: -39px -20px 10px -20px;
+            }
+            h2{
+            padding-top: 10px;
+            }
+            #content {
+            margin-left: 57px;
+            margin-top: 40px;
+            }
+            #register label{
+            margin-right:5px;
+            }
+            #register input {
+            padding: 5px 14px;
+            border: 1px solid #d5d9da;
+            box-shadow: 0 0 9px #0E34F5 inset;
+            width: 272px;
+            font-size: 1em;
+            height: 25px;
+            }
+            #register .short{
+            font-weight:bold;
+            color:#FF0000;
+            font-size:larger;
+            }
+            #register .weak{
+            font-weight:bold;
+            color:orange;
+            font-size:larger;
+            }
+            #register .good{
+            font-weight:bold;
+            color:#2D98F3;
+            font-size:larger;
+            }
+            #register .strong{
+            font-weight:bold;
+            color: limegreen;
+            font-size:larger;
+            }

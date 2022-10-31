@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form Input</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="javascript.js"></script>
+
+    </head>
+    
+    <body> 
+        <nav class="navbar">
+            <a href="MyContacts.html" target="_self" >My Contacts</a>
+            <a href="MyForm.html" target = "_blank" >Form Input</a>
+            <a href="MyWidgets.html" target = "_blank" >My Widgets</a>
+            <a href="MyServer.html" target = "_blank" >My MyServer</a>
+        </nav>
+        <form method="post" action="http://localhost:9001/MyForm.html">
+            
+            <table class="table2">
+            <tr>
+                <td> Name </td>
+                <td> <label> <input name="name" id =  "name" type="text" required pattern="([a-z0-9A-Z\s]){2,}" title="Contact's name must be alphanumeric"></label> </td> 
+            </tr>
+
+            <tr>
+            <td> Contact Category </td>
+            <td> <label> 
+                <select id="category" name="category" required> 
+                    <option value="">Choose</option>
+                    <option value="Personal">Personal </option>
+                    <option value="Academic">Academic </option>
+                    <option value="Industry">Industry </option>
+                </select>  
+                </label> 
+            </td>
+        </tr>
+            <tr>
+                <td>Location</td>
+                <td> <label>
+                    
+                    <input name="location" id = "location" type="text" required >
+                    
+                
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-1qJ2tol8C9NEiyeh7ORSRZP0iDxsRwY&libraries=places&callback=initFormMap" async defer></script>
+
+                </label> 
+                </td>
+            </tr>
+            <tr>
+                <td>  Contact Information </td>
+            	<td> <label>
+                    <input name="contact" id = "contact" type="text" required>
+                </label> </td>
+            </tr>
+            <tr>
+            <td> Email </td>
+            <td> <label>
+                    <input type= "email" name="email" id = "email" required >
+                </label> </td>
+                
+            </tr>
+            <tr>
+            <td> Website </td>
+            <td>  <label><input type="url" name="website" id =  "website" required>
+                </label>
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> <input type="submit" value="Button"> </td> 
+            </tr>
+            </table>
+        </form>
+        <div class="MyFormMap">
+        <div id="googleMap"></div>
+    </div>
+    </body>
+</html>

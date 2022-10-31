@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        
+        <title> My Widgets </title>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script><!-- jQuery Library-->
+        <link rel="stylesheet" href="css/passwordscheck.css" /><!-- Include Your CSS file here-->
+        <script src="js/passwordscheck.js"></script><!-- Include Your jQUery file here-->
+        
+    </head>
+
+    <body> 
+        <nav class="navbar">
+            <a href="MyContacts.html" target="_self" >My Contacts</a>
+            <a href="MyForm.html" target = "_blank" >Form Input</a>
+            <a href="MyWidgets.html" target = "_blank" >My Widgets</a>
+        </nav>
+
+        <h1><span> Widgets</span></h1>
+        <div class="box"> <!-- Box class-->
+                <div class="widgets"> <!-- widget class-->
+                    <iframe width="500" height="315" src="https://www.youtube.com/embed/YbJOTdZBX1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> <!-- widget class-->
+
+                <div class="pwd"> <!-- pwd class-->
+                    <div id="container1">
+                        <div id="header1">
+                            <h2> Random Password Generate</h2><hr>
+                        </div>
+                    
+                        <div id="contnt">
+                    
+                            <form id="randompwd">
+                            <label for="password"><b>Password : </b></label>
+                            <input name="randomPassword" id="randomPassword" type="text"/>&nbsp;&nbsp;
+                            <br>
+                            <button type="button" onclick="generateRandomPassword()">Generate</button>
+                            </form>
+                    
+                        </div>
+        
+                    </div>
+        
+                </div> <!-- pwd class-->
+
+            <div class="widgets">
+                <a class="twitter-timeline" data-width="500" data-height="400" href="https://twitter.com/TwitterDev/timelines/539487832448843776?ref_src=twsrc%5Etfw">National Park Tweets - Curated tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div> 
+
+            <div class="pwdChecker">
+
+                
+                <div id="container">
+                    <div id="header">
+                        <h2>Password Strength Checker</h2>
+                        <hr>
+                    </div>
+                    <div id="content">
+                    <form id="register">
+                    <label for="password"><b>Password : </b></label>
+                    <input name="password" id="password" type="password" placeholder="Type Your Password here"/>&nbsp;&nbsp;
+                    <span id="result"></span>
+                    </form>
+                    </div>
+                </div>
+            
+                <script>
+                $(document).ready(function() {
+                    $('#password').keyup(function() {
+                    $('#result').html(checkStrength($('#password').val()))
+                    })
+                    function checkStrength(password) {
+                    var strength = 0
+                    if (password.length < 6) {
+                    $('#result').removeClass()
+                    $('#result').addClass('short')
+                    return 'Too short'
+                    }
+                    if (password.length > 7) strength += 1
+                    // If password contains both lower and uppercase characters, increase strength value.
+                    if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength += 1
+                    // If it has numbers and characters, increase strength value.
+                    if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) strength += 1
+                    // If it has one special character, increase strength value.
+                    if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+                    // If it has two special characters, increase strength value.
+                    if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+                    // Calculated strength value, we can return messages
+                    // If value is less than 2
+                    if (strength < 2) {
+                    $('#result').removeClass()
+                    $('#result').addClass('weak')
+                    return 'Weak'
+                    } else if (strength == 2) {
+                    $('#result').removeClass()
+                    $('#result').addClass('good')
+                    return 'Good'
+                    } else {
+                    $('#result').removeClass()
+                    $('#result').addClass('strong')
+                    return 'Strong'
+                    }
+                    }
+                    }
+                    );
+                </script>
+            </div><!-- pwd class-->
+    </div><!-- box class-->
+
+    </body>
+</html>

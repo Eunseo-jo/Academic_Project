@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset = "utf-8">
+        <script src="javascript.js"></script>
+        <title> My Contacts </title>
+    </head>
+    <body> 
+
+        <nav class="navbar">
+            <a href="MyContacts.html" target="_self" >My Contacts</a>
+            <a href="MyForm.html" target = "_blank" >Form Input</a>
+            <a href="MyWidgets.html" target = "_blank" >My Widgets</a>
+        </nav>
+        
+        <h1> My Contacts </h1>
+        <img class = "img" src="img/gophers-mascot.png" alt="gophers-mascot">
+        
+        <table id = "table1" class="table1">
+            <tr>
+                <th> Name </th>
+                <th>Contact<br>Category</th>
+                <th> Location </th>
+                <th> Contact Information </th>
+                <th> email </th>
+                <th> Website </th>
+            </tr>
+            <tr>
+                <td> Dr. Dan Challou </td>
+                <td>Personal</td>
+                <td> 3-383 Shepherd Labs<br>100 Union St SE<br> Minneapolis, MN 55455 </td>
+                <td> Spring 22 Csci 4131 TA 
+                    <br> <img class = "hoverImg" src="img/keller.jpg" alt="keller">
+                    <img class = "hoverBigImg" src="img/keller.jpg" alt="keller">
+
+
+                </td>
+                <td> <a href = "mailto:chal0006@umn.edu" >chal0006@umn.edu</a> </td>
+                <td> <a href="https://cse.umn.edu/cs"> CS Department Home Page </a> </td>
+            </tr>
+            <tr>
+                <td> Tianming Cui </td>
+                <td> Adcademic </td>
+                <td> 2-209 Keller Hall<br> 200 Union St SE<br> Minneapolis, MN 55455  </td>
+                <td> Spring 22 Csci 4131 TA 
+                    <br> <img class = "hoverImg" src="img/keller.jpg" alt="keller">
+                    <img class = "hoverBigImg"  src="img/keller.jpg" alt="keller">
+                </td>
+                <td> <a href = "mailto:cuixx327@umn.edu" >cuixx327@umn.edu</a>  </td>
+                <td> <a href="https://cse.umn.edu/cs"> CS Department Home Page </a> </td>
+            </tr>
+            <tr>
+                <td> President Joan T.A. Gabel</td>
+                <td> Industry </td>
+                <td> 202 Morrill Hall<br> 100 Church Street SE<br> Minneapolis, MN 55455  </td>
+                <td> President of the University of Minnesota System 
+                    <br> 
+                    <img class = "hoverImg" src="img/morrill.jpg" alt="morrill">
+                    <img class = "hoverBigImg"  src="img/morrill.jpg" alt="morrill">
+                </td>
+                <td> <a href = "mailto:upres@umn.edu" >upres@umn.edu</a>  </td>
+                <td> <a href="https://president.umn.edu/"> Home Page </a> </td>
+            </tr>
+            <tr>
+                <td> Thomas Nguyen </td>
+                <td> Adcademic </td>
+                <td> 2-209 Keller Hall<br> 200 Union St SE<br> Minneapolis, MN 55455  </td>
+                <td> Spring 22 Csci 4131 TA 
+                    <br> <img class = "hoverImg" src="img/keller.jpg" alt="keller">
+                    <img class = "hoverBigImg"  src="img/keller.jpg" alt="keller">
+                </td>
+                <td> <a href = "mailto:nguy3817@umn.edu" >nguy3817@umn.edu</a> </td>
+                <td> <a href="https://cse.umn.edu/cs"> CS Department Home Page </a> </td>
+            </tr>
+            <tr>
+                <td> Peter Wang </td>
+                <td> Adcademic </td>
+                <td> 2-209 Keller Hall<br> 200 Union St SE<br> Minneapolis, MN 55455  </td>
+                <td> Spring 22 Csci 4131 TA 
+                    <br> <img class = "hoverImg" src="img/keller.jpg" alt="keller">
+                    <img class = "hoverBigImg"  src="img/keller.jpg" alt="keller">
+                </td>
+                <td> <a href = "mailto:wang5959@umn.edu" >wang5959@umn.edu</a></td>
+                <td> <a href="https://cse.umn.edu/cs"> CS Department Home Page </a> </td>
+            </tr>
+            <tr>
+                <td> Zejun Zang </td>
+                <td> Adcademic </td>
+                <td> 2-209 Keller Hall<br> 200 Union St SE<br> Minneapolis, MN 55455  </td>
+                <td> Spring 22 Csci 4131 TA 
+                    <br> <img class = "hoverImg" src="img/keller.jpg" alt="keller">
+                    <img class = "hoverBigImg"  src="img/keller.jpg" alt="keller">
+                </td>
+                <td> <a href = "mailto:zhan7565@umn.edu" >zhan7565@umn.edu</a></td>
+                <td> <a href="https://cse.umn.edu/cs"> CS Department Home Page </a> </td>
+            </tr>
+        </table>
+
+<div id="googleMap" style="width:750px;height:400px; float:left; margin-left: auto;"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-1qJ2tol8C9NEiyeh7ORSRZP0iDxsRwY&callback=createMap&libraries=places" async defer></script>
+
+<table class="table3">
+    <tr>
+        <td> Find Nearby </td>
+        <td>  
+            <div id="Place">
+                Find
+                <select id="place" name="place">
+                  <option value="restaurant">Restaurant</option>
+                  <option value="hospital">Hospital</option>
+                  <option value="parking">Parking</option>
+                  <option value="supermarket">Supermarket</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <input name="OtherPlace" id = "OtherPlace" type="text" disabled placeholder="Enter Other Places" > <br>
+
+            in <input name="inputRadius" id = "inputRadius"  type="text"> meters <br> <br>                          
+            <button type="button" onclick="createMap()"> Search </button> 
+        </td>
+    </tr>
+
+    <tr>
+        <td> Find Direction </td>
+        <td>
+            Take me to <select id="TakeMeTo"> </select>
+
+            From  <input id="startLocation" type="text" placeholder="Default (Current Location)" />
+            <br> by <br>
+            <div id = method>
+                <label for="DRIVING">Driving</label>
+                <input type="radio" id="DRIVING" name = "by" value="DRIVING"> <br>
+                <label for="WALKING">Walking</label>
+                <input type="radio" id="WALKING" name = "by" value="WALKING"> <br>
+                <label for="TRANSIT">Transit</label>
+                <input type="radio" id="TRANSIT"  name = "by" value="TRANSIT"> <br>
+            </div>
+              
+            <input type="button" id="findRoute" value="Go" />
+        </td>
+    </tr>
+</table>
+
+    </body>
+</html>
