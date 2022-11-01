@@ -1,2 +1,2 @@
 # Academic_Project
-Academic Project
+Academic Project in University of Minnesota
