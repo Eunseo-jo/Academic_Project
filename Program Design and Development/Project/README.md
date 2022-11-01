@@ -1,7 +1,6 @@
 # CSCI 3081W - Program Design and Development
 
-+ Project Iteration 1 is to develop an image processing program that can perform several filtering operations (threshold, blur, sharpen, color, etc¡¦) including
-Canny edge detection. This will build the image processing infrastructure necessary for analyzing images returned from a drone¡¯s camera.
++ Project Iteration 1 is to develop an image processing program that can perform several filtering operations (threshold, blur, sharpen, color, etc) including Canny edge detection. This will build the image processing infrastructure necessary for analyzing images returned from a drone's camera.
 
 + Project Iteration 2 is to develop a drone simulation that uses simple computer vision techniques to search for an object in a scene.  The simulation will use the image processing infrastructure developed in Iteration 1.
 
